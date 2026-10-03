@@ -6,4 +6,9 @@
 
 % Your implementation please...
 
+{ sudoku(ROW,COL,NUM) : NUM = 1..4 } = 1 :- ROW = 1..4, COL = 1..4.
+:- initial(ROW,COL,NUM), not sudoku(ROW,COL,NUM).
+:- sudoku(ROW1,COL,NUM), sudoku(ROW2,COL,NUM), ROW1 != ROW2.
+:- sudoku(ROW,COL1,NUM), sudoku(ROW,COL2,NUM), COL1 != COL2.
+
 #show sudoku/3.
